@@ -15,7 +15,7 @@ namespace DemoAzureStorage.Controllers
     [RoutePrefix("api/upload")]
     public class UploadController : ApiController
     {
-        private const string Container = "images";
+        private const string Container = "mycontainer";
 
         [HttpPost, Route("")]
         public async Task<IHttpActionResult> UploadFile()
@@ -25,8 +25,8 @@ namespace DemoAzureStorage.Controllers
                 throw new HttpResponseException(HttpStatusCode.UnsupportedMediaType);
             }
 
-            var accountName = ConfigurationManager.AppSettings["storage:account:name"];
-            var accountKey = ConfigurationManager.AppSettings["storage:account:key"];
+            var accountName = ConfigurationManager.AppSettings["imgfunc83e6"];
+            var accountKey = ConfigurationManager.AppSettings["AxD8oG36C8ECdMXgLCLyd2pxdE2JVQ7HXUk2gdFobWIMUw+FfNaerwQQNQx3JuvZjZvXHUA9P3Jo0+QYxvOP0g=="];
             var storageAccount = new CloudStorageAccount(new StorageCredentials(accountName, accountKey), true);
             CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
 
